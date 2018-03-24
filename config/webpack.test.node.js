@@ -7,7 +7,7 @@ const isCoverage = process.env.NODE_ENV === 'coverage';
 const coverageRules = [].concat({
   enforce: 'post',
   test: /\.(js|ts)$/,
-  include: helpers.root('src'),
+  include: helpers.root('web'),
   exclude: [
     /\.(e2e|spec)\.ts$/,
     /node_modules/
@@ -15,7 +15,7 @@ const coverageRules = [].concat({
   loaders: ['istanbul-instrumenter-loader']
 }, {
   test: /\.ts$/,
-  include: helpers.root('src'),
+  include: helpers.root('web'),
   exclude: [/\.e2e\.ts$/],
   loaders: [{
     loader: 'awesome-typescript-loader',
@@ -34,7 +34,7 @@ const coverageRules = [].concat({
 
 const nonCoverageRules = [{
   test: /\.ts$/,
-  include: helpers.root('src'),
+  include: helpers.root('web'),
   exclude: [/\.e2e\.ts$/],
   loaders: [{
     loader: 'awesome-typescript-loader',

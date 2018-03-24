@@ -8,7 +8,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
-      App: path.resolve(__dirname, 'src/app/')
+      App: path.resolve(__dirname, 'web/app/')
     }
   },
 
@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: helpers.root('src/app'),
+        exclude: helpers.root('web/app'),
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader?sourceMap',
           use: 'css-loader?sourceMap'
@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: helpers.root('src/app'),
+        include: helpers.root('web/app'),
         loader: 'css-to-string-loader!css-loader'
       }
     ]
@@ -50,7 +50,7 @@ module.exports = {
     // Workaround for angular/angular#11580
     new webpack.ContextReplacementPlugin(
       /\@angular(\\|\/)core(\\|\/)esm5/,
-      helpers.root('src'),
+      helpers.root('web'),
       {}
     ),
     new webpack.optimize.CommonsChunkPlugin({ //Keep the vendor code out of the app
@@ -58,7 +58,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({ //Inject scripts and links into index.html
-      template: helpers.root('src/index.html')
+      template: helpers.root('web/index.html')
     })
   ],
   performance: {

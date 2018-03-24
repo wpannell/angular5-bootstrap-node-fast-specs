@@ -23,7 +23,7 @@ module.exports = webpackMerge(commonTestConfig, {
     rules: [
       {
         test: /\.ts$/,
-        include: helpers.root('src'),
+        include: helpers.root('web'),
         exclude: [/\.e2e\.ts$/],
         loaders: ['awesome-typescript-loader', 'angular2-template-loader']
       }
@@ -32,7 +32,7 @@ module.exports = webpackMerge(commonTestConfig, {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: helpers.root('src/mocha-browser-test/mocha-index.html')
+      template: helpers.root('web/mocha-browser-test/mocha-index.html')
     })
   ]
 });

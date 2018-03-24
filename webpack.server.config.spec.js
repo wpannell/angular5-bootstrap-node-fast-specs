@@ -14,7 +14,7 @@ module.exports = {
       '~testhelpers': path.resolve(__dirname, 'test/helpers'),
       '~apiSpecs': path.resolve(__dirname, 'test/apiSpecs'),
       '~/apiSpecs': path.resolve(__dirname, 'test/apiSpecs'),
-      '~/config': path.resolve(__dirname, 'src/config/index')
+      '~/config': path.resolve(__dirname, 'web/config/index')
     }
   },
   devtool: 'cheap-module-source-map',

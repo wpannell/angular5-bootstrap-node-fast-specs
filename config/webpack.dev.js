@@ -6,9 +6,9 @@ module.exports = webpackMerge(commonConfig, {
   devtool: 'cheap-module-eval-source-map',
 
   entry: {
-    'polyfills': helpers.root('src', 'polyfills.ts'),
-    'vendor': helpers.root('src', 'vendor.ts'),
-    'app': helpers.root('src', 'main.ts')
+    'polyfills': helpers.root('web', 'polyfills.ts'),
+    'vendor': helpers.root('web', 'vendor.ts'),
+    'app': helpers.root('web', 'main.ts')
   },
 
   output: {
