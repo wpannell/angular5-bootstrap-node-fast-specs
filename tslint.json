@@ -93,6 +93,7 @@
       true,
       "always"
     ],
+    "space-before-function-paren": [true, "never"],
     "triple-equals": [
       true,
       "allow-null-check"
