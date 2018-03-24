@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from '../material/material.module';
 
 import {RootComponent} from './root.component';
 
@@ -11,8 +10,7 @@ import {RootComponent} from './root.component';
   ],
   imports: [
     BrowserAnimationsModule,
-    BrowserModule,
-    MaterialModule
+    BrowserModule
   ],
   exports: [RootComponent],
   providers: [],

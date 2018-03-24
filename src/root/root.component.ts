@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
     <button type="button" class="btn btn-primary" rel="hi-button">Hi</button>
   `,
     styles: [`
-      * {
-        font-family: AmericanSansLight, Arial, serif;
-      }
       head, body, .app-content {
         height: 100vh;
         width: 100vw;
