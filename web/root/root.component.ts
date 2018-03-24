@@ -4,18 +4,20 @@ import {Component} from '@angular/core';
   selector: 'root',
   template: `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#" rel="navbar">Home</a>
+      <a class="navbar-brand" href="#" rel="navbar"><i class="fa fa-home"></i> Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
               aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+        </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">View Cart</a>
+            <a class="nav-link" href="#">View Cart  <i class="fa fa-shopping-cart"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Checkout</a>
+            <a class="nav-link" href="#">Checkout  <i class="fa fa-credit-card"></i></a>
           </li>
         </ul>
       </div>
@@ -113,7 +115,7 @@ import {Component} from '@angular/core';
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
+                    <a href="#" class="btn btn-primary">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                   </div>
                 </div>
               </div>
@@ -123,7 +125,7 @@ import {Component} from '@angular/core';
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
+                    <a href="#" class="btn btn-primary">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                   </div>
                 </div>
               </div>
