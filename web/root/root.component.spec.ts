@@ -7,12 +7,16 @@ require('should');
 describe('host page should show', () => {
   let element;
 
-  it('hello world', () => {
-    element.querySelector('h1').textContent.should.containEql('hello world!');
+  it('the navbar', () => {
+    element.querySelector('a[rel=navbar]').textContent.should.containEql('Home');
   });
 
-  it('hi button', () => {
-    element.querySelector('button[rel=hi-button]').textContent.should.containEql('Hi');
+  it('the sidebar', () => {
+    element.querySelector('h6[rel=sidebar]').textContent.should.containEql('Mixes');
+  });
+
+  it('an image in the card', () => {
+    element.querySelector('img[rel=card-img]').src.should.not.be.empty();
   });
 
   beforeEach(() => {
