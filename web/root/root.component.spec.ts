@@ -7,10 +7,6 @@ require('should');
 describe('host page should show', () => {
   let element;
 
-  it('the navbar', () => {
-    element.querySelector('a[rel=navbar]').textContent.should.containEql('Home');
-  });
-
   it('the sidebar', () => {
     element.querySelector('h6[rel=sidebar]').textContent.should.containEql('Mixes');
   });
