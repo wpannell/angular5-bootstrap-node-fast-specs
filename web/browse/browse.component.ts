@@ -6,12 +6,12 @@ import {Component, OnInit} from '@angular/core';
     <div>
       <header></header>
       <div class="row">
-        <sidenav></sidenav>
-        <!-- <products></products> -->
-
+        <nav class="col-3">
+          <sidenav></sidenav>
+        </nav>
+        <products></products>
       </div>
       <footer-bar></footer-bar>
-      <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
            aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
