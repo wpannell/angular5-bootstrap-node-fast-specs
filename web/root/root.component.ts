@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProductFetchService} from './product.service';
 
 @Component({
   selector: 'root',
@@ -190,5 +191,15 @@ import {Component} from '@angular/core';
 
 })
 
-export class RootComponent {
+export class RootComponent implements OnInit {
+  products: any[];
+
+  constructor(private productFetchService: ProductFetchService) {
+  }
+
+  ngOnInit(): any {
+    return this.productFetchService.fetch('/assets/data/products.json');
+  }
+
+
 }
