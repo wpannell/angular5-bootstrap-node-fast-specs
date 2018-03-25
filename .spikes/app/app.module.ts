@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { RoutingModule } from '../router';
 import { HeaderModule } from '../components/header';
@@ -20,8 +20,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     RoutingModule,
     BrowseModule,
-    EraseModule,
-    NgbModule.forRoot()
+    EraseModule
+    // NgbModule.forRoot()
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' }
