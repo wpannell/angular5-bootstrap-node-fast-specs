@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'root',
+  selector: 'header',
   template: `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#" rel="header-home"><i class="fa fa-home"></i> Home</a>

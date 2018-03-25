@@ -7,12 +7,6 @@ export class ProductFetchService {
   constructor(private http: HttpClient) {}
 
   fetch(url): Promise<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-    return this.http.get(
-      url, {
-        headers: headers
-      }
-    ).toPromise();
+    return Promise.resolve();
   }
 }
