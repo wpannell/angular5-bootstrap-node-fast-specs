@@ -112,8 +112,10 @@ import {Component} from '@angular/core';
                 <div class="card">
                   <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap" rel="product-img">
                   <div class="card-body">
-                    <h5 class="card-title" rel="product-title">Card title</h5>
-                    <h6 class="card-subtitle" rel="product-price">$100.00</h6>
+                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><h5 class="card-title" rel="product-title">Card
+                      title</h5></a>
+                    <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price $100.00</p></h6>
+                    <h6 class="card-subtitle" rel="product-discount"><p class="text-right">Discount price $80.00</p></h6>
                     <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
                       of the card's content.</p>
                     <a href="#" class="btn btn-primary" rel="product-addtocart">Add to cart <i class="fa fa-cart-plus"
@@ -125,8 +127,10 @@ import {Component} from '@angular/core';
                 <div class="card">
                   <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap" rel="product-img">
                   <div class="card-body">
-                    <h5 class="card-title" rel="product-title">Card title</h5>
-                    <h6 class="card-subtitle" rel="product-price">$100.00</h6>
+                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><h5 class="card-title" rel="product-title">Card
+                      title</h5></a>
+                    <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price $100.00</p></h6>
+                    <h6 class="card-subtitle" rel="product-discount"><p class="text-right">Discount price $80.00</p></h6>
                     <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
                       of the card's content.</p>
                     <a href="#" class="btn btn-primary" rel="product-addtocart">Add to cart <i class="fa fa-cart-plus"
@@ -141,9 +145,42 @@ import {Component} from '@angular/core';
     </div>
     <footer class="footer">
       <div class="container">
-        <span class="text-muted" rel="footer"><i class="fa fa-copyright"></i> 2000-2018 Cementz, LLC. All Rights Reserved. </span>
+        <span class="text-muted" rel="footer">
+          <p class="text-center"><i class="fa fa-copyright"></i>2000-2018 Cementz, LLC. All Rights Reserved.</p></span>
       </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap" rel="product-img">
+              <div class="card-body">
+                <h5 class="card-title" rel="product-title">Card title</h5>
+                <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price $100.00</p></h6>
+                <h6 class="card-subtitle" rel="product-discount"><p class="text-right">Discount price $80.00</p></h6>
+                <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
+                  of the card's content.</p>
+                <a href="#" class="btn btn-primary" rel="product-addtocart">Add to cart <i class="fa fa-cart-plus"
+                                                                                           aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   `,
   styles: [`
     head, body, .app-content {
