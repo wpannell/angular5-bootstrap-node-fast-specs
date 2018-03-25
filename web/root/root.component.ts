@@ -114,7 +114,7 @@ import {Component} from '@angular/core';
                   <div class="card-body">
                     <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><h5 class="card-title" rel="product-title">Card
                       title</h5></a>
-                    <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price $100.00</p></h6>
+                    <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price <s>$100.00</s></p></h6>
                     <h6 class="card-subtitle" rel="product-discount"><p class="text-right">Discount price $80.00</p></h6>
                     <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
                       of the card's content.</p>
@@ -129,7 +129,7 @@ import {Component} from '@angular/core';
                   <div class="card-body">
                     <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><h5 class="card-title" rel="product-title">Card
                       title</h5></a>
-                    <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price $100.00</p></h6>
+                    <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price <s>$100.00</s></p></h6>
                     <h6 class="card-subtitle" rel="product-discount"><p class="text-right">Discount price $80.00</p></h6>
                     <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
                       of the card's content.</p>
@@ -167,18 +167,15 @@ import {Component} from '@angular/core';
               <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap" rel="product-img">
               <div class="card-body">
                 <h5 class="card-title" rel="product-title">Card title</h5>
-                <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price $100.00</p></h6>
+                <h6 class="card-subtitle" rel="product-price"><p class="text-right">Retail price <s>$100.00</s></p></h6>
                 <h6 class="card-subtitle" rel="product-discount"><p class="text-right">Discount price $80.00</p></h6>
                 <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
                   of the card's content.</p>
-                <a href="#" class="btn btn-primary" rel="product-addtocart">Add to cart <i class="fa fa-cart-plus"
-                                                                                           aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
