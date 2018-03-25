@@ -7,9 +7,6 @@ require('should');
 describe('host page should show', () => {
   let element;
 
-  it('the sidebar', () => {
-    element.querySelector('h6[rel=sidebar]').textContent.should.containEql('Mixes');
-  });
 
   it('an image in the card', () => {
     element.querySelector('img[rel=product-img]').src.should.not.be.empty();
@@ -25,10 +22,6 @@ describe('host page should show', () => {
 
   it('the add to cart button', () => {
     element.querySelector('a[rel=product-addtocart]').textContent.should.containEql('Add to cart');
-  });
-
-  it('a footer', () => {
-    element.querySelector('span[rel=footer]').textContent.should.containEql('Cementz');
   });
 
   beforeEach(() => {

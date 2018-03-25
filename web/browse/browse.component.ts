@@ -44,14 +44,7 @@ import {Component, OnInit} from '@angular/core';
           </div>
         </main>
       </div>
-      <footer class="footer">
-        <div class="container">
-          <span class="text-muted" rel="footer">
-            <p class="text-center">
-              <i class="fa fa-copyright"></i>2000-2018 Cementz, LLC. All Rights Reserved.
-            </p></span>
-        </div>
-      </footer>
+      <footer-bar></footer-bar>
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
            aria-hidden="true">

@@ -3,6 +3,7 @@ import {BrowseComponent} from './browse.component';
 import {HeaderModule} from './header';
 import {BrowserModule} from '@angular/platform-browser';
 import {SidenavModule} from './sidenav';
+import {FooterModule} from './footer';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {SidenavModule} from './sidenav';
   imports: [
     BrowserModule,
     HeaderModule,
-    SidenavModule
+    SidenavModule,
+    FooterModule
   ],
   exports: [BrowseComponent],
   providers: []

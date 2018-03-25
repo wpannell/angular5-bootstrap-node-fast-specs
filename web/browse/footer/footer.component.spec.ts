@@ -1,32 +1,23 @@
 import {getTestBed, TestBed} from '@angular/core/testing';
-import {BrowseModule, BrowseComponent} from './';
+import {FooterModule, FooterComponent} from './';
 
 require('should');
 
-describe('the browse page should show', () => {
+describe('the footer should show', () => {
   let element;
-
-  it('header', () => {
-    element.querySelector('a[rel=header-home]').textContent.should.containEql('Home');
-  });
-
-  it('the sidebar', () => {
-    element.querySelector('h6[rel=sidebar]').textContent.should.containEql('Mixes');
-  });
 
   it('a footer', () => {
     element.querySelector('span[rel=footer-text]').textContent.should.containEql('Cementz');
   });
-  it('products');
 
   beforeEach(() => {
     return TestBed.configureTestingModule({
-      imports: [BrowseModule]
+      imports: [FooterModule]
     }).compileComponents();
   });
 
   beforeEach(() => {
-    const fixture = TestBed.createComponent(BrowseComponent);
+    const fixture = TestBed.createComponent(FooterComponent);
     fixture.detectChanges();
     element = fixture.debugElement.nativeElement;
   });
