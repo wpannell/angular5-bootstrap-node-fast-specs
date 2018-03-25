@@ -4,7 +4,7 @@
 import {Right, Left, tryCatch} from './functional-types';
 import fs from 'fs';
 
-describe('composable error handling', () => {
+describe.skip('composable error handling', () => {
   it('getPort', () => {
     const getPort = () =>
       tryCatch(() => fs.readFileSync('server/08-functional/config.json'))

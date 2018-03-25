@@ -4,7 +4,7 @@
 import fs from 'fs';
 import {tryCatch, fromNullable} from './functional-types';
 
-describe('wrap examples', () => {
+describe.skip('wrap examples', () => {
   describe('imperative', () => {
     const wrapExamples = example => {
       if (example.previewPath) {
