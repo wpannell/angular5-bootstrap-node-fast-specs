@@ -23,8 +23,14 @@ import {Component, OnInit} from '@angular/core';
       </div>
     </nav>
   `,
-  styles: []
+  styles: [`
+    head, body, .app-content {
+      height: 100vh;
+      width: 100vw;
+    }
+  `]
 
 })
 
-export class HeaderComponent { }
+export class HeaderComponent {
+}

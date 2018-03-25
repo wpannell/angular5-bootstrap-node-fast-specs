@@ -1,28 +1,27 @@
 import {getTestBed, TestBed} from '@angular/core/testing';
-import {BrowseModule, BrowseComponent} from './';
+import {SidenavModule, SidenavComponent} from './';
 
 require('should');
 
-describe('the browse page should show', () => {
+describe('the navbar should show', () => {
   let element;
 
-  it('header', () => {
-    element.querySelector('a[rel=header-home]').textContent.should.containEql('Home');
-  });
-  it('sidebar', () => {
+  it('Mixes and Repairs section', () => {
     element.querySelector('span[rel=sidenav-mixes]').textContent.should.containEql('Mixes & Repairs');
   });
-  it('footer');
-  it('products');
+
+  it('Concrete Materials section', () => {
+    element.querySelector('span[rel=sidenav-concrete]').textContent.should.containEql('Concrete Materials');
+  });
 
   beforeEach(() => {
     return TestBed.configureTestingModule({
-      imports: [BrowseModule]
+      imports: [SidenavModule]
     }).compileComponents();
   });
 
   beforeEach(() => {
-    const fixture = TestBed.createComponent(BrowseComponent);
+    const fixture = TestBed.createComponent(SidenavComponent);
     fixture.detectChanges();
     element = fixture.debugElement.nativeElement;
   });

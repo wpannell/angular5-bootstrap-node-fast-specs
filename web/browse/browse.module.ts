@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowseComponent} from './browse.component';
 import {HeaderModule} from './header';
 import {BrowserModule} from '@angular/platform-browser';
+import {SidenavModule} from './sidenav';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import {BrowserModule} from '@angular/platform-browser';
   ],
   imports: [
     BrowserModule,
-    HeaderModule
+    HeaderModule,
+    SidenavModule
   ],
   exports: [BrowseComponent],
   providers: []
