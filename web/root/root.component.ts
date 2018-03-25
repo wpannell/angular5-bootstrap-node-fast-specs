@@ -146,7 +146,9 @@ import {Component} from '@angular/core';
     <footer class="footer">
       <div class="container">
         <span class="text-muted" rel="footer">
-          <p class="text-center"><i class="fa fa-copyright"></i>2000-2018 Cementz, LLC. All Rights Reserved.</p></span>
+          <p class="text-center">
+            <i class="fa fa-copyright"></i>2000-2018 Cementz, LLC. All Rights Reserved.
+          </p></span>
       </div>
     </footer>
     <!-- Modal -->
