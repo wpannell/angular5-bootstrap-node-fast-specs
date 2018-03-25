@@ -14,10 +14,10 @@ import {Component} from '@angular/core';
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">View Cart  <i class="fa fa-shopping-cart"></i></a>
+            <a class="nav-link" href="#">View Cart <i class="fa fa-shopping-cart"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Checkout  <i class="fa fa-credit-card"></i></a>
+            <a class="nav-link" href="#">Checkout <i class="fa fa-credit-card"></i></a>
           </li>
         </ul>
       </div>
@@ -110,22 +110,27 @@ import {Component} from '@angular/core';
             <div class="row">
               <div class="col">
                 <div class="card">
-                  <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap"
-                       rel="card-img">
+                  <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap" rel="product-img">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                    <h5 class="card-title" rel="product-title">Card title</h5>
+                    <h6 class="card-subtitle" rel="product-price">$100.00</h6>
+                    <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
+                      of the card's content.</p>
+                    <a href="#" class="btn btn-primary" rel="product-addtocart">Add to cart <i class="fa fa-cart-plus"
+                                                                                               aria-hidden="true"></i></a>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card">
-                  <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap">
+                  <img class="card-img-top" data-src="holder.js/300x200" src="..." alt="Card image cap" rel="product-img">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                    <h5 class="card-title" rel="product-title">Card title</h5>
+                    <h6 class="card-subtitle" rel="product-price">$100.00</h6>
+                    <p class="card-text" rel="product-description">Some quick example text to build on the card title and make up the bulk
+                      of the card's content.</p>
+                    <a href="#" class="btn btn-primary" rel="product-addtocart">Add to cart <i class="fa fa-cart-plus"
+                                                                                               aria-hidden="true"></i></a>
                   </div>
                 </div>
               </div>
@@ -134,7 +139,11 @@ import {Component} from '@angular/core';
         </main>
       </div>
     </div>
-
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted" rel="footer"><i class="fa fa-copyright"></i> 2000-2018 Cementz, LLC. All Rights Reserved. </span>
+      </div>
+    </footer>
   `,
   styles: [`
     head, body, .app-content {
