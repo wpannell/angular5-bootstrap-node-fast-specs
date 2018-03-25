@@ -4,6 +4,7 @@ import {HeaderModule} from './header';
 import {BrowserModule} from '@angular/platform-browser';
 import {SidenavModule} from './sidenav';
 import {FooterModule} from './footer';
+import {ProductsModule} from './products';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {FooterModule} from './footer';
     BrowserModule,
     HeaderModule,
     SidenavModule,
-    FooterModule
+    FooterModule,
+    ProductsModule
   ],
   exports: [BrowseComponent],
   providers: []

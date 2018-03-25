@@ -17,7 +17,10 @@ describe('the browse page should show', () => {
   it('a footer', () => {
     element.querySelector('span[rel=footer-text]').textContent.should.containEql('Cementz');
   });
-  it('products');
+  
+  it('products', () => {
+    element.querySelector('img[rel=product-img]').src.should.not.be.empty();
+  });
 
   beforeEach(() => {
     return TestBed.configureTestingModule({
