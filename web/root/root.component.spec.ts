@@ -16,7 +16,23 @@ describe('host page should show', () => {
   });
 
   it('an image in the card', () => {
-    element.querySelector('img[rel=card-img]').src.should.not.be.empty();
+    element.querySelector('img[rel=product-img]').src.should.not.be.empty();
+  });
+
+  it('the retail price', () => {
+    element.querySelector('h6[rel=product-price]').textContent.should.containEql('100.00');
+  });
+
+  it('the description', () => {
+    element.querySelector('p[rel=product-description]').textContent.should.containEql('quick example');
+  });
+
+  it('the add to cart button', () => {
+    element.querySelector('a[rel=product-addtocart]').textContent.should.containEql('Add to cart');
+  });
+
+  it('a footer', () => {
+    element.querySelector('span[rel=footer]').textContent.should.containEql('Cementz');
   });
 
   beforeEach(() => {
