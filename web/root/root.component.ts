@@ -4,7 +4,7 @@ import {ProductFetchService} from '../services/product.service';
 @Component({
   selector: 'root',
   template: `
-    <browse></browse>
+    <router-outlet></router-outlet>
   `,
   styles: [`
     head, body, .app-content {

@@ -4,6 +4,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {RootComponent} from './root.component';
 import {BrowseModule} from '../browse';
+import {RoutingModule} from '../router';
+import {APP_BASE_HREF} from '@angular/common';
+import {TestModule} from '../test/test.module';
 
 @NgModule({
   declarations: [
@@ -12,10 +15,14 @@ import {BrowseModule} from '../browse';
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    BrowseModule
+    BrowseModule,
+    RoutingModule,
+    TestModule
   ],
   exports: [RootComponent],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' }
+  ],
   bootstrap: [RootComponent]
 })
 export class RootModule {
