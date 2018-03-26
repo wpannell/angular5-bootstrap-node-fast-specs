@@ -8,6 +8,7 @@
 /out-tsc
 /contracts/logs
 /.webpack
+/archive
 yarn-error.log
 
 # dependencies
