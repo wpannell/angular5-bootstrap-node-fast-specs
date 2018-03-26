@@ -1,0 +1,221 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Create Toolchain Button",
+    "description": "ibm cloud garage method developer bootcamp toolchain",
+    "longDescription": "continuous integration/delivery",
+    "type": "object",
+    "properties": {
+        "dev-region": {
+            "description": "dev region",
+            "type": "string"
+        },
+        "dev-organization": {
+            "description": "dev organization",
+            "type": "string"
+        },
+        "dev-space": {
+            "description": "development instance",
+            "type": "string"
+        },
+        "e2e-region": {
+            "description": "e2e region",
+            "type": "string"
+        },
+        "e2e-organization": {
+            "description": "e2e organization",
+            "type": "string"
+        },
+        "e2e-space": {
+            "description": "e2e test instance",
+            "type": "string"
+        },
+        "load-region": {
+            "description": "load region",
+            "type": "string"
+        },
+        "load-organization": {
+            "description": "load organization",
+            "type": "string"
+        },
+        "load-space": {
+            "description": "load test instance",
+            "type": "string"
+        },
+        "qa-region": {
+            "description": "qa region",
+            "type": "string"
+        },
+        "qa-organization": {
+            "description": "qa organization",
+            "type": "string"
+        },
+        "qa-space": {
+            "description": "qa instance",
+            "type": "string"
+        },
+        "stage-region": {
+            "description": "stage region",
+            "type": "string"
+        },
+        "stage-organization": {
+            "description": "stage organization",
+            "type": "string"
+        },
+        "stage-space": {
+            "description": "staging instance",
+            "type": "string"
+        },
+        "prod-region": {
+            "description": "region",
+            "type": "string"
+        },
+        "prod-organization": {
+            "description": "organization",
+            "type": "string"
+        },
+        "prod-space": {
+            "description": "production instance",
+            "type": "string"
+        },
+        "application": {
+            "description": "unique name of the cloud foundry application",
+            "type": "string",
+            "pattern": "\\S"
+        }
+    },
+    "required": [
+        "prod-region",
+        "prod-organization",
+        "dev-space",
+        "e2e-space",
+        "load-space",
+        "qa-space",
+        "stage-space",
+        "prod-space",
+        "application"
+    ],
+    "form": [
+        {
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/helper.html"
+        },
+        {
+            "type": "table",
+            "columnCount": 3,
+            "widths": [
+                "33%",
+                "33%",
+                "33%"
+            ],
+            "items": [
+                {
+                    "type": "label",
+                    "title": "Cloud Foundry Application Name:"
+                },
+                {
+                    "type": "label",
+                    "title": "Region:"
+                },
+                {
+                    "type": "label",
+                    "title": "Organization:"
+                },
+                {
+                    "type": "text",
+                    "readonly": false,
+                    "key": "application"
+                },
+                {
+                    "type": "select",
+                    "key": "prod-region"
+                },
+                {
+                    "type": "select",
+                    "key": "prod-organization"
+                }
+            ]
+        },
+        {
+            "type": "table",
+            "columnCount": 4,
+            "widths": [
+                "15%",
+                "28%",
+                "28%",
+                "28%"
+            ],
+            "items": [
+                {
+                    "type": "label",
+                    "title": ""
+                },
+                {
+                    "type": "label",
+                    "title": "Production"
+                },
+                {
+                    "type": "label",
+                    "title": "Staging"
+                },
+                {
+                    "type": "label",
+                    "title": "QA"
+                },
+                {
+                    "type": "label",
+                    "title": "Targeted Deployments"
+                },
+                {
+                  "type": "select",
+                  "key": "prod-space",
+                  "readonly": false
+                },
+                {
+                  "type": "select",
+                  "key": "stage-space",
+                  "readonly": false
+                },
+                {
+                    "type": "select",
+                    "key": "qa-space",
+                    "readonly": false
+                },
+                {
+                  "type": "label",
+                  "title": ""
+                },
+                {
+                  "type": "label",
+                  "title": "Load Test"
+                },
+                {
+                  "type": "label",
+                  "title": "Functional Test"
+                },
+                {
+                  "type": "label",
+                  "title": "Development"
+                },
+                {
+                    "type": "label",
+                    "title": ""
+                },
+                {
+                  "type": "select",
+                  "key": "load-space",
+                  "readonly": false
+                },
+                {
+                  "type": "select",
+                  "key": "e2e-space",
+                  "readonly": false
+                },
+                {
+                    "type": "select",
+                    "key": "dev-space",
+                    "readonly": false
+                }
+            ]
+        }
+    ]
+}
