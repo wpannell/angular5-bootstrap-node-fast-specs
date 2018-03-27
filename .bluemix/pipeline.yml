@@ -39,7 +39,7 @@ stages:
 
           npm install -s
           npm run ci -s
-          npm run dist -s
+          npm run build -s
           npm prune -s
 
           ls -al
@@ -113,7 +113,7 @@ stages:
 
           npm install -s
           npm run ci -s
-          npm run dist -s
+          npm run build -s
           npm prune -s
 
           ls -al
