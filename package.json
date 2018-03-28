@@ -16,7 +16,8 @@
   "scripts": {
     "ng": "ng",
     "ci": "concurrently \"npm run lint:ci\" \"npm run server:lint:ci\" \" npm run spec:ci\" \" npm run server:spec:ci\" \" npm run spec:coverage:ci\" \" npm run server:coverage:ci\"",
-    "start": "concurrently --kill-others \"npm run server\" \"ng serve --environment=local\" ",
+    "start": "node_modules/.bin/ng serve --environment=prod",
+    "start:local": "concurrently --kill-others \"npm run server\" \"ng serve --environment=local\" ",
     "start-qa": "ng serve --environment=qa --port 4300",
     "server": "json-server server/api/db.json --port 8080 --watch",
     "build": "node --stack_size=4048 node_modules/.bin/ng build --prod --environment=prod",

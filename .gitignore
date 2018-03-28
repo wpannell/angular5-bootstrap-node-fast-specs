@@ -10,7 +10,6 @@
 /.webpack
 yarn-error.log
 package-lock.json
-archive/
 .nyc_output/
 /changelog.txt
 
@@ -34,6 +33,7 @@ archive/
 npm-debug.log
 testem.log
 /typings
+.nyc_output/
 
 # e2e
 /e2e/*.js
