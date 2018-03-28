@@ -8,7 +8,7 @@ stages:
     triggers:
       - type: commit
     jobs:
-      - name: distribution
+      - name: build
         type: builder
         artifact_dir: archive
         enable_tests: true
@@ -16,8 +16,8 @@ stages:
         build_type: npm
         script: |-
           #!/bin/bash
-          git config --global user.email "wgpannel@us.ibm.com"
-          git config --global user.name "wil.pannell"
+          git config --global user.email "jcalalang@ph.ibm.com"
+          git config --global user.name "jason.calalang"
 
           export NVM_DIR=/home/pipeline/nvm
           export NODE_VERSION=v8.9.4
@@ -39,41 +39,11 @@ stages:
 
           npm install -s
           npm run ci -s
-          npm run build -s
-          npm prune -s
-
-          ls -al
-          mkdir -p archive
-          ls -al
-          mkdir -p generated
-          scripts/archive.sh
-          git whatchanged --pretty=format:'%s %cn %h %cd' -1 > archive/changelog.txt
 
           git checkout integration
           git pull origin integration
           git merge dev1 --no-ff --log
           git push origin integration --no-verify
-
-          git checkout --track origin/archive
-          git pull origin archive
-          git merge dev1 --no-ff --log
-          rm changelog.txt
-          ls -al
-          cp archive/changelog.txt .
-          echo "${BUILD_NUMBER}" >> changelog.txt
-          ls -al
-          git add .
-          git commit -m "$(cat archive/changelog.txt)" --no-verify
-          git push origin archive --no-verify
-
-          git checkout --track origin/distribution
-          git pull origin distribution
-          cp archive/* .
-          git add .
-          git commit -m "$(cat archive/changelog.txt)" --no-verify
-          git push origin distribution --no-verify
-
-          ls -al
   - name: dev2
     inputs:
       - type: git
@@ -90,8 +60,8 @@ stages:
         build_type: npm
         script: |-
           #!/bin/bash
-          git config --global user.email "wgpannel@us.ibm.com"
-          git config --global user.name "wil.pannell"
+          git config --global user.email "jcalalang@ph.ibm.com"
+          git config --global user.name "jason.calalang"
 
           export NVM_DIR=/home/pipeline/nvm
           export NODE_VERSION=v8.9.4
@@ -113,41 +83,55 @@ stages:
 
           npm install -s
           npm run ci -s
-          npm run build -s
-          npm prune -s
-
-          ls -al
-          mkdir -p archive
-          ls -al
-          mkdir -p generated
-          scripts/archive.sh
-          git whatchanged --pretty=format:'%s %cn %h %cd' -1 > archive/changelog.txt
 
           git checkout integration
           git pull origin integration
           git merge dev2 --no-ff --log
           git push origin integration --no-verify
+  - name: dev3
+    inputs:
+      - type: git
+        branch: dev3
+        service: ${SOURCE_CONTROL_SERVICE}
+    triggers:
+      - enabled: false
+    jobs:
+      - name: distribution
+        type: builder
+        artifact_dir: archive
+        enable_tests: true
+        test_file_pattern: '*.xml, generated/*.xml'
+        build_type: npm
+        script: |-
+          #!/bin/bash
+          git config --global user.email "jcalalang@ph.ibm.com"
+          git config --global user.name "jason.calalang"
 
-          git checkout --track origin/archive
-          git pull origin archive
-          git merge dev2 --no-ff --log
-          rm changelog.txt
-          ls -al
-          cp archive/changelog.txt .
-          echo "${BUILD_NUMBER}" >> changelog.txt
-          ls -al
-          git add .
-          git commit -m "$(cat archive/changelog.txt)" --no-verify
-          git push origin archive --no-verify
+          export NVM_DIR=/home/pipeline/nvm
+          export NODE_VERSION=v8.9.4
+          export NVM_VERSION=v0.33.2
+          npm config delete prefix \
+            && curl https://raw.githubusercontent.com/creationix/nvm/${NVM_VERSION}/install.sh | sh \
+            && . $NVM_DIR/nvm.sh \
+            && nvm install $NODE_VERSION \
+            && nvm alias default $NODE_VERSION \
+            && nvm use default \
+            && node -v \
+            && npm -v \
+            && export PATH=${NVM_DIR}/versions/node/${NODE_VERSION}/bin:./node_modules/.bin:$PATH
 
-          git checkout --track origin/distribution
-          git pull origin distribution
-          cp archive/* .
-          git add .
-          git commit -m "$(cat archive/changelog.txt)" --no-verify
-          git push origin distribution --no-verify
+          git branch -a
+          git branch integration
+          git fetch origin integration
+          git merge integration --ff-only
 
-          ls -al
+          npm install -s
+          npm run ci -s
+
+          git checkout integration
+          git pull origin integration
+          git merge dev3 --no-ff --log
+          git push origin integration --no-verify
   - name: integration
     inputs:
       - type: git
@@ -155,23 +139,16 @@ stages:
         service: ${SOURCE_CONTROL_SERVICE}
     triggers:
       - type: commit
-    properties:
-    - name: SAUCE_USERNAME
-      value: {{services.test.parameters.username}}
-      type: text
-    - name: SAUCE_ACCESS_KEY
-      value: {{services.test.parameters.key}}
-      type: text
     jobs:
-      - name: 'saucelabs'
+      - name: 'build'
         type: builder
         enable_tests: true
         test_file_pattern: '*.xml, generated/*.xml'
         build_type: npm
         script: |-
           #!/bin/bash
-          git config --global user.email "wgpannel@us.ibm.com"
-          git config --global user.name "wil.pannell"
+          git config --global user.email "jcalalang@ph.ibm.com"
+          git config --global user.name "jason.calalang"
 
           export NVM_DIR=/home/pipeline/nvm
           export NODE_VERSION=v8.9.4
@@ -188,15 +165,6 @@ stages:
 
           npm install
           mkdir -p generated
-          npm run test:sauce -s
-  - name: dev
-    inputs:
-      - type: git
-        branch: distribution
-        service: ${SOURCE_CONTROL_SERVICE}
-    triggers:
-      - type: commit
-    jobs:
       - name: 'promote to dev'
         type: deployer
         target:
@@ -208,10 +176,21 @@ stages:
           #!/bin/bash
           printenv
 
-          ls -al
-          tar -zxvf dist.tar.gz
-          rm dist.tar.gz
-          ls -al
+          export NVM_DIR=/home/pipeline/nvm
+          export NODE_VERSION=v8.9.4
+          export NVM_VERSION=v0.33.2
+          npm config delete prefix \
+            && curl https://raw.githubusercontent.com/creationix/nvm/${NVM_VERSION}/install.sh | sh \
+            && . $NVM_DIR/nvm.sh \
+            && nvm install $NODE_VERSION \
+            && nvm alias default $NODE_VERSION \
+            && nvm use default \
+            && node -v \
+            && npm -v \
+            && export PATH=${NVM_DIR}/versions/node/${NODE_VERSION}/bin:./node_modules/.bin:$PATH
+
+          npm install -s
+          npm build --prod -s
 
           cf add-plugin-repo CF-Community http://plugins.cloudfoundry.org
           cf install-plugin blue-green-deploy -r CF-Community <<< y
