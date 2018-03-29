@@ -10,7 +10,6 @@
 /.webpack
 yarn-error.log
 package-lock.json
-archive/
 .nyc_output/
 /changelog.txt
 

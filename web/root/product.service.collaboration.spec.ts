@@ -2,7 +2,7 @@ require('should');
 const td = require('testdouble');
 const {replace, when, reset} = td;
 
-describe.only('service spec', () => {
+describe('service spec', () => {
   afterEach(() => {
     reset();
   });
