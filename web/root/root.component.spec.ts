@@ -8,7 +8,7 @@ describe('host page should show', () => {
   let element;
 
   it('the navbar', () => {
-    element.querySelector('a[rel=navbar]').textContent.should.containEql('Home');
+    element.querySelector('a[rel=header-home]').textContent.should.containEql('Home');
   });
 
   it('the sidebar', () => {
@@ -32,7 +32,7 @@ describe('host page should show', () => {
   });
 
   it('a footer', () => {
-    element.querySelector('span[rel=footer]').textContent.should.containEql('Cementz');
+    element.querySelector('span[rel=footer-text]').textContent.should.containEql('Cementz');
   });
 
   beforeEach(() => {
