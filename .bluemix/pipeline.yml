@@ -4,7 +4,8 @@ stages:
   inputs:
   - type: git
     branch: dev1
-    service: ${SOURCE_CONTROL_SERVICE}  triggers:
+    service: ${SOURCE_CONTROL_SERVICE}  
+  triggers:
   - type: commit
   jobs:
   - name: build
