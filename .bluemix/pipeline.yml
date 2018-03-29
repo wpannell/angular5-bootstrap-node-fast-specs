@@ -48,7 +48,8 @@ stages:
   inputs:
   - type: git
     branch: dev2
-    service: ${SOURCE_CONTROL_SERVICE}  jobs:
+    service: ${SOURCE_CONTROL_SERVICE}  
+  jobs:
   - name: distribution
     type: builder
     artifact_dir: ''
