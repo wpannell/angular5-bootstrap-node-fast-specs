@@ -4,7 +4,7 @@ stages:
   inputs:
   - type: git
     branch: dev1
-    service: ${SOURCE_CONTROL_SERVICE}  
+    service: ${SOURCE_CONTROL_SERVICE}
   triggers:
   - type: commit
   jobs:
@@ -14,8 +14,8 @@ stages:
     build_type: npm
     script: |-
       #!/bin/bash
-      git config --global user.email "jcalalang@ph.ibm.com"
-      git config --global user.name "jason.calalang"
+      git config --global user.email "wgpannel@us.ibm.com"
+      git config --global user.name "wil.pannell"
 
       export NVM_DIR=/home/pipeline/nvm
       export NODE_VERSION=v8.9.4
@@ -48,7 +48,7 @@ stages:
   inputs:
   - type: git
     branch: dev2
-    service: ${SOURCE_CONTROL_SERVICE}  
+    service: ${SOURCE_CONTROL_SERVICE}
   jobs:
   - name: distribution
     type: builder
@@ -56,8 +56,8 @@ stages:
     build_type: npm
     script: |-
       #!/bin/bash
-      git config --global user.email "jcalalang@ph.ibm.com"
-      git config --global user.name "jason.calalang"
+      git config --global user.email "wgpannel@us.ibm.com"
+      git config --global user.name "wil.pannell"
 
       export NVM_DIR=/home/pipeline/nvm
       export NODE_VERSION=v8.9.4
@@ -98,8 +98,8 @@ stages:
     build_type: npm
     script: |-
       #!/bin/bash
-      git config --global user.email "jcalalang@ph.ibm.com"
-      git config --global user.name "jason.calalang"
+      git config --global user.email "wgpannel@us.ibm.com"
+      git config --global user.name "wil.pannell"
 
       export NVM_DIR=/home/pipeline/nvm
       export NODE_VERSION=v8.9.4
