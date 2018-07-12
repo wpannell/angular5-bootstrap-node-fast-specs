@@ -9,6 +9,7 @@ module.exports = {
     devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
   },
   resolve: {
+    extensions: ['.js'],
     alias: {
       '~/testhelpers': path.resolve(__dirname, 'test/helpers'),
       '~testhelpers': path.resolve(__dirname, 'test/helpers'),
