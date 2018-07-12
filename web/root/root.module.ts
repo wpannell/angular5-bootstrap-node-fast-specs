@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {RootComponent} from './root.component';
-import {ProductServiceModule} from './product.service.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +11,6 @@ import {ProductServiceModule} from './product.service.module';
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    ProductServiceModule
   ],
   exports: [RootComponent],
   providers: [],
