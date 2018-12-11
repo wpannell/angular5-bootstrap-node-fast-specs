@@ -3,7 +3,7 @@ const isPrime = number => {
     return false;
   };
 
-  return true;
+  return number === 1 ? true : false;
 };
 
 describe('Verify if a number is a Prime number', () => {
@@ -15,7 +15,10 @@ describe('Verify if a number is a Prime number', () => {
      isPrime(1).should.be.true();
    });
 
-   it('4 is not');
+   it('4 is not', () => {
+     isPrime(4).should.be.false();
+   });
+
    it( '5 is');
    it('6 is not');
    it('7 is');
