@@ -1,6 +1,6 @@
 const isPalindrome = word => word === word.split('').reverse().join('');
 
-describe.only('verify if a word or a sentence is a Palindrome', () => {
+describe('verify if a word or a sentence is a Palindrome', () => {
   it('"anna" is', () => {
     isPalindrome('anna').should.be.true();
   });
