@@ -1,4 +1,4 @@
-const stackCreator = () => {
+const createStack = () => {
   let top = null;
   let size = 0;
 
@@ -6,17 +6,18 @@ const stackCreator = () => {
   const length = () => size;
 
   const push = element => {
-    let node = {
+    top = {
       value: element,
       next: top === null ? null : top,
     };
-
-    top = node;
 
     size++;
   };
 
   const pop = () => {
+    if (isEmpty()) {
+      throw new Error('cannot pop an empty stack');
+    }
     let poppedElement = top;
 
     if (top.next !== null) {
@@ -42,7 +43,7 @@ let stack;
 
 describe('stack', () => {
   beforeEach(() => {
-    stack = stackCreator();
+    stack = createStack();
   });
 
   it('starts empty', () => {
@@ -87,6 +88,11 @@ describe('stack', () => {
     stack.pop().should.equal(1);
   });
 
-  it('pop should throw a stack empty error when empty');
+  it('pop should throw a stack empty error when empty', () => {
+    (() => {
+      stack.pop();
+    }).should.throw('cannot pop an empty stack');
+  });
+
   it('push should throw a stack at capacity error when at capacity');
 });
