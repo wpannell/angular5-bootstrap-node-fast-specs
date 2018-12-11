@@ -1,5 +1,6 @@
 const stack = {
-  isEmpty: () => true
+  isEmpty: () => true,
+  length: () => 0
 };
 
 describe('stack', () => {
@@ -7,7 +8,9 @@ describe('stack', () => {
     stack.isEmpty().should.be.true();
   });
 
-  it('starts with a length of zero');
+  it('starts with a length of zero', () => {
+    stack.length().should.equal(0);
+  });
   it('when push is not empty');
   it('when push length is one');
   it('should pop the same that is pushed');
