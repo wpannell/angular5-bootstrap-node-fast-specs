@@ -1,16 +1,15 @@
-let palindrome = () => true;
+const isPalindrome = word => word === word.split('').reverse().join('');
 
-describe('a palindrome function', () => {
-  it('has a canary test that proves the test infrastructure works', () => {
-    true.should.be.true();
+describe.only('verify if a word or a sentence is a Palindrome', () => {
+  it('"anna" is', () => {
+    isPalindrome('anna').should.be.true();
   });
 
-  it('mom is a palindrome', () => {
-    palindrome('mom').should.is.true();
-
+  it('"ab" is not', () => {
+    isPalindrome('ab').should.be.false();
   });
 
-  it('mom and dad is not palindrome');
-  it('madam is a palindrome');
-  it('rise to vote sir is a palindrome');
+  it('"Top spot" is not', () => {
+    isPalindrome('top spot').should.be.false();
+  });
 });
