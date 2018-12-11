@@ -1,5 +1,5 @@
 const isPrime = number => {
-  if (number < 1) {
+  if (number <= 1) {
     return false;
   };
 
@@ -17,8 +17,8 @@ describe('Verify if a number is a Prime number', () => {
      isPrime(0).should.be.false();
    });
 
-   it('1 is', () => {
-     isPrime(1).should.be.true();
+   it('1 is not', () => {
+     isPrime(1).should.be.false();
    });
 
    it('4 is not', () => {
@@ -28,7 +28,4 @@ describe('Verify if a number is a Prime number', () => {
    it( '5 is', () => {
      isPrime(5).should.be.true();
    });
-
-   it('11 is');
-   it('15 is');
 });
