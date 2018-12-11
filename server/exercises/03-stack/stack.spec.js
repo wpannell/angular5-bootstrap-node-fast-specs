@@ -8,7 +8,13 @@ const stackCreator = () => {
     top = element;
   };
 
-  const pop = () => top;
+  const pop = () => {
+    let poppedElement = top;
+
+    top = null;
+
+    return poppedElement;
+  };
 
   return {
     isEmpty: isEmpty,
@@ -47,7 +53,12 @@ describe('stack', () => {
     stack.pop().should.equal(3);
   });
 
-  it('length should be zero after push and pop');
+  it('length should be zero after push and pop', () => {
+    stack.push(8);
+    stack.pop();
+    stack.length().should.equal(0);
+  });
+
   it('push two and pop returns the last element pushed');
   it('push two, 2nd pop returns the first element pushed');
   it('pop should throw a stack empty error when empty');
