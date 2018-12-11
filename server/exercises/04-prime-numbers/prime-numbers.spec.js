@@ -15,11 +15,6 @@ describe('Verify if a number is a Prime number', () => {
      isPrime(1).should.be.true();
    });
 
-   it('2 is', () => {
-     isPrime(2).should.be.true();
-   });
-
-   it('3 is');
    it('4 is not');
    it( '5 is');
    it('6 is not');
