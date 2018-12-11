@@ -1,11 +1,14 @@
-const isPrime = number => false;
+const isPrime = number => number === 1 ? true : false;
 
 describe('Verify if a number is a Prime number', () => {
    it('0 is not', () => {
      isPrime(0).should.be.false();
    });
 
-   it('1 is');
+   it('1 is', () => {
+     isPrime(1).should.be.true();
+   });
+
    it('2 is');
    it('3 is');
    it('4 is not');
