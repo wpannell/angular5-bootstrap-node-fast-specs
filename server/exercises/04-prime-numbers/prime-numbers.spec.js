@@ -1,7 +1,7 @@
 const isPrime = number => {
   if (number <= 1) {
     return false;
-  };
+  }
 
   for (let i = 2; i < number; i++) {
     if (number % i === 0) {
@@ -19,6 +19,10 @@ describe('Verify if a number is a Prime number', () => {
 
    it('1 is not', () => {
      isPrime(1).should.be.false();
+   });
+
+   it('2 is', () => {
+     isPrime(2).should.be.true();
    });
 
    it('4 is not', () => {
