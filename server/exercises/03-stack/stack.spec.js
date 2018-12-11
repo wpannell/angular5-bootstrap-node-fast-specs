@@ -1,5 +1,12 @@
+const stack = {
+  isEmpty: () => true
+};
+
 describe('stack', () => {
-  it('starts empty');
+  it('starts empty', () => {
+    stack.isEmpty().should.be.true();
+  });
+
   it('starts with a length of zero');
   it('when push is not empty');
   it('when push length is one');
