@@ -1,17 +1,20 @@
 const stackCreator = () => {
   let top = null;
+  let size = 0;
 
   const isEmpty = () => top === null;
-  const length = () => top === null ? 0 : 1;
+  const length = () => size;
 
   const push = element => {
     top = element;
+    size++;
   };
 
   const pop = () => {
     let poppedElement = top;
 
     top = null;
+    size--;
 
     return poppedElement;
   };
@@ -30,6 +33,7 @@ describe('stack', () => {
   beforeEach(() => {
     stack = stackCreator();
   });
+
   it('starts empty', () => {
     stack.isEmpty().should.be.true();
   });
@@ -59,7 +63,11 @@ describe('stack', () => {
     stack.length().should.equal(0);
   });
 
-  it('length should be two after push and push');
+  it('length should be two after push and push', () => {
+    stack.push(6);
+    stack.push(7);
+    stack.length().should.equal(2);
+  });
 
   it('push two and pop one returns the last element pushed');
   it('push two, 2nd pop returns the first element pushed');
