@@ -6,17 +6,28 @@ const stackCreator = () => {
   const length = () => size;
 
   const push = element => {
-    top = element;
+    let node = {
+      value: element,
+      next: top === null ? null : top,
+    };
+
+    top = node;
+
     size++;
   };
 
   const pop = () => {
     let poppedElement = top;
 
-    top = null;
+    if (top.next !== null) {
+      top = top.next;
+    } else {
+      top = null;
+    }
+
     size--;
 
-    return poppedElement;
+    return poppedElement.value;
   };
 
   return {
@@ -69,8 +80,13 @@ describe('stack', () => {
     stack.length().should.equal(2);
   });
 
-  it('push two and pop one returns the last element pushed');
-  it('push two, 2nd pop returns the first element pushed');
+  it('push two, 2nd pop returns the first element pushed', () => {
+    stack.push(1);
+    stack.push(2);
+    stack.pop();
+    stack.pop().should.equal(1);
+  });
+
   it('pop should throw a stack empty error when empty');
   it('push should throw a stack at capacity error when at capacity');
 });
