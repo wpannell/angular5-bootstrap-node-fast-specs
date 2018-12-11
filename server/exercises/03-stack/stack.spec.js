@@ -59,7 +59,9 @@ describe('stack', () => {
     stack.length().should.equal(0);
   });
 
-  it('push two and pop returns the last element pushed');
+  it('length should be two after push and push');
+
+  it('push two and pop one returns the last element pushed');
   it('push two, 2nd pop returns the first element pushed');
   it('pop should throw a stack empty error when empty');
   it('push should throw a stack at capacity error when at capacity');
