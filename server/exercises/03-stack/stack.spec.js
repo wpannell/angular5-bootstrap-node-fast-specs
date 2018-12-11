@@ -1,7 +1,21 @@
-const stack = {
-  isEmpty: () => true,
-  length: () => 0
+const stackCreator = () => {
+  let top = null;
+
+  const isEmpty = () => top === null;
+  const length = () => 0;
+
+  const push = element => {
+    top = element;
+  };
+
+  return {
+    isEmpty: isEmpty,
+    length: length,
+    push: push
+  };
 };
+
+const stack = stackCreator();
 
 describe('stack', () => {
   it('starts empty', () => {
@@ -11,7 +25,12 @@ describe('stack', () => {
   it('starts with a length of zero', () => {
     stack.length().should.equal(0);
   });
-  it('when push is not empty');
+
+  it('when push is not empty', () => {
+    stack.push(5);
+    stack.isEmpty().should.be.false();
+  });
+
   it('when push length is one');
   it('should pop the same that is pushed');
   it('length should be zero after push and pop');
