@@ -1,11 +1,14 @@
 const createStack = () => {
   let top = null;
   let size = 0;
+  const capacity = 2;
 
   const isEmpty = () => top === null;
   const length = () => size;
 
   const push = element => {
+    if (size === capacity) throw new Error('capacity limit has reached');
+
     top = {
       value: element,
       next: top === null ? null : top,
@@ -15,19 +18,14 @@ const createStack = () => {
   };
 
   const pop = () => {
-    if (isEmpty()) {
-      throw new Error('cannot pop an empty stack');
-    }
-    let poppedElement = top;
+    if (isEmpty()) throw new Error('cannot pop an empty stack');
 
-    if (top.next !== null) {
-      top = top.next;
-    } else {
-      top = null;
-    }
+    let poppedElement = top;
+    if (top.next !== null) top = top.next;
+    else top = null;
+
 
     size--;
-
     return poppedElement.value;
   };
 
@@ -94,5 +92,11 @@ describe('stack', () => {
     }).should.throw('cannot pop an empty stack');
   });
 
-  it('push should throw a stack at capacity error when at capacity');
+  it('push should throw a stack at capacity error when at capacity', () => {
+    (() => {
+      stack.push(7);
+      stack.push(8);
+      stack.push(9);
+    }).should.throw('capacity limit has reached');
+  });
 });
