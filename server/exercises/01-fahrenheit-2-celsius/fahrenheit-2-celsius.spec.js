@@ -1,15 +1,8 @@
-let fahrenheit2celsius = temp => (temp - 32) * 5 / 9;
-
-describe('a fahrenheit2celsius feature', () => {
-  it('has a working test infrastructure', () => {
-    true.should.be.true();
+describe('the fahrenheit2celsius canary spec', () => {
+  it('shows the test infrastructure works', () => {
+    true.should.be.true('test not working');
   });
-
-  it('fahrenheit2celsius of 212 is 100', () => {
-    fahrenheit2celsius(212).should.equal(100);
-  });
-
-  it('fahrenheit2celsius of 32 is 0', () => {
-    fahrenheit2celsius(32).should.equal(0);
-  });
+  it('212° fahrenheit = 100° celsius');
+  it('32° fahrenheit = 0° celsius');
+  it('122° fahrenheit = 50° celsius');
 });
