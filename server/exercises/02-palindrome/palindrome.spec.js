@@ -1,4 +1,4 @@
-const isPalindrome = word => true;
+const isPalindrome = phrase => phrase.length === 3 ? true : false;
 
 describe('a palindrome function', () => {
   it('has a canary test that proves the test infrastructure works', () => {
@@ -9,7 +9,10 @@ describe('a palindrome function', () => {
     isPalindrome('mom').should.be.true();
   });
 
-  it('mom and dad is not palindrome');
+  it('mom and dad is not palindrome', () => {
+    isPalindrome('mom and dad').should.be.false();
+  });
+
   it('madam is a palindrome');
   it('rise to vote sir is a palindrome');
 });
