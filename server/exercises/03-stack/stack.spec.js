@@ -56,7 +56,12 @@ describe('stack implementation', () => {
     stack.length().should.equal(0);
   });
 
-  it('push two and pop returns the last element pushed');
+  it('push two and pop returns the last element pushed', () => {
+    stack.push(5);
+    stack.push(6);
+    stack.pop(0).should.equal(6);
+  });
+
   it('push two, 2nd pop returns the first element pushed');
   it('pop should throw an stack empty error when empty');
   it('push should throw a stack at capacity error when at capacity');
