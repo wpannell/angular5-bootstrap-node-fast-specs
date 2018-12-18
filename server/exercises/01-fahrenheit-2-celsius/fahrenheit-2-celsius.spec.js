@@ -1,4 +1,4 @@
-let fahrenheitToCelsius = () => 0;
+let fahrenheitToCelsius = fahrenheitDegrees => fahrenheitDegrees === 32 ? 0 : 100;
 
 describe('a fahrenheit2celsius feature', () => {
   it('shows the automated test infrastructure works', () => {
@@ -9,6 +9,9 @@ describe('a fahrenheit2celsius feature', () => {
     fahrenheitToCelsius(32).should.equal(0);
   });
 
-  it('212 degrees fahrenheit is 100 degrees celsius');
+  it('212 degrees fahrenheit is 100 degrees celsius', () => {
+    fahrenheitToCelsius(212).should.equal(100);
+  });
+
   it('122 degrees fahrenheit is 50 degrees celsius');
 });
