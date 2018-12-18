@@ -1,6 +1,10 @@
 let stack = {
   isEmpty() {
     return true;
+  },
+
+  length() {
+    return 0;
   }
 };
 
@@ -13,7 +17,10 @@ describe('stack implementation', () => {
     stack.isEmpty().should.be.true();
   });
 
-  it('starts with a length of zero');
+  it('starts with a length of zero', () => {
+    stack.length().should.equal(0);
+  });
+
   it('when push is not empty');
   it('when push length is one');
   it('should pop the same that is pushed');
