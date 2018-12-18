@@ -1,23 +1,23 @@
 class Stack {
 
   constructor() {
-    this.items = [];
+    this.elements = [];
   }
 
   isEmpty() {
-    return !this.items || this.items.length === 0;
+    return !this.elements || this.length() === 0;
   }
 
   length() {
-    return this.items.length;
+    return this.elements.length;
   }
 
   push(element) {
-    this.items.push(element);
+    this.elements.push(element);
   }
 
   pop() {
-    return this.items.pop();
+    return this.elements.pop();
   }
 }
 
@@ -48,9 +48,24 @@ describe('', () => {
     stack.pop().should.be.equal(1);
   });
 
-  it('length should be zero after push and pop');
-  it('push two and pop returns the last element pushed');
-  it('push two, 2nd pop returns the first element pushed');
+  it('length should be zero after push and pop', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.length().should.equal(0);
+  });
+  it('push two and pop returns the last element pushed', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.pop().should.be.equal(2);
+  });
+  xit('push two, 2nd pop returns the first element pushed', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.pop();
+    stack.pop().should.be.equal(1);
+  });
   it('pop should throw an stack empty error when empty');
   it('push should throw a stack at capacity error when at capacity');
   it('peek should return the top element');

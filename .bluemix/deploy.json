@@ -107,7 +107,7 @@
                 "33%",
                 "33%"
             ],
-            "items": [
+            "elements": [
                 {
                     "type": "label",
                     "title": "Cloud Foundry Application Name:"
@@ -144,7 +144,7 @@
                 "28%",
                 "28%"
             ],
-            "items": [
+            "elements": [
                 {
                     "type": "label",
                     "title": ""
