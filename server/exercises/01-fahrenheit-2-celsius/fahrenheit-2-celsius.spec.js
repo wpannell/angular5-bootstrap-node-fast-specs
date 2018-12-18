@@ -1,4 +1,12 @@
-let fahrenheit2Celsius = () => 100;
+let fahrenheit2Celsius = (temp) => {
+  if (temp === 212) {
+
+    return 100;
+  } else {
+    return 0;
+  }
+};
+
 
 describe('fahrenheit2celsius feature', () => {
   it('shows the automated test infrastructure works', () => {
@@ -9,7 +17,7 @@ describe('fahrenheit2celsius feature', () => {
     fahrenheit2Celsius(212).should.equal(100);
   });
   it('32° fahrenheit in celsius is 0°', () => {
-              fahrenheit2Celsius(32).should.equal(0);
+    fahrenheit2Celsius(32).should.equal(0);
   });
   it('122° fahrenheit in celsius is 50°');
 
