@@ -13,5 +13,7 @@ describe('a fahrenheit2celsius feature', () => {
     fahrenheitToCelsius(212).should.equal(100);
   });
 
-  it('122 degrees fahrenheit is 50 degrees celsius');
+  it('122 degrees fahrenheit is 50 degrees celsius', () => {
+    fahrenheitToCelsius(122).should.equal(50);
+  });
 });
