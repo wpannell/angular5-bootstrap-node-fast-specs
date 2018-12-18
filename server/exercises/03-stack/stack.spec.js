@@ -72,13 +72,13 @@ describe('stack implementation', () => {
   });
 
   it('pop should throw an stack empty error when empty', () => {
-    stack.pop.bind(null, null).should.throw();
+    stack.pop.bind(null, null).should.throw('Stack is Empty');
   });
 
   it('push should throw a stack at capacity error when at capacity', () => {
     stack.push(9);
     stack.push(10);
-    stack.push.bind(null, 11).should.throw();
+    stack.push.bind(null, 11).should.throw('Stack length limit is 2');
   });
 
   it('peek should return the top element');
