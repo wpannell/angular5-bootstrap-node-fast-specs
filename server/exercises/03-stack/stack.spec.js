@@ -50,7 +50,12 @@ describe('stack implementation', () => {
     stack.pop().should.equal(3);
   });
 
-  it('length should be zero after push and pop');
+  it('length should be zero after push and pop', () => {
+    stack.push(4);
+    stack.pop();
+    stack.length().should.equal(0);
+  });
+
   it('push two and pop returns the last element pushed');
   it('push two, 2nd pop returns the first element pushed');
   it('pop should throw an stack empty error when empty');
