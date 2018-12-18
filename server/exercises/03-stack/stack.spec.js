@@ -90,6 +90,11 @@ describe('stack implementation', () => {
     stack.peek().should.equal(12);
   });
 
-  it('peek should not modify length');
+  it('peek should not modify length', () => {
+    stack.push(13);
+    stack.peek();
+    stack.length().should.equal(1);
+  });
+
   it('peek should throw an stack empty error when empty');
 });
