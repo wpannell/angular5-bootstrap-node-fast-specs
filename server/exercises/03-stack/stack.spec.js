@@ -62,7 +62,13 @@ describe('stack implementation', () => {
     stack.pop(0).should.equal(6);
   });
 
-  it('push two, 2nd pop returns the first element pushed');
+  it('push two, 2nd pop returns the first element pushed', () => {
+    stack.push(7);
+    stack.push(8);
+    stack.pop();
+    stack.pop().should.equal(7);
+  });
+
   it('pop should throw an stack empty error when empty');
   it('push should throw a stack at capacity error when at capacity');
   it('peek should return the top element');
