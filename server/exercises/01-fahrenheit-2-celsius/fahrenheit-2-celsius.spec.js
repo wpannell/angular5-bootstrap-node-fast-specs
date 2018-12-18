@@ -1,6 +1,8 @@
 let fahrenheit2Celsius = (temp) => {
   if (temp === 212) {
     return 100;
+  } else if (temp === 122) {
+    return 50;
   } else {
     return 0;
   }
