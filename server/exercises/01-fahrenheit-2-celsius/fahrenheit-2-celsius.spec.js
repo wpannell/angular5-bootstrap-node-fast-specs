@@ -1,4 +1,6 @@
-let fahrenheitToCelsius = fahrenheitDegrees => fahrenheitDegrees === 32 ? 0 : 100;
+let fahrenheitToCelsius = fahrenheitDegrees => {
+  return (fahrenheitDegrees - 32) * 5 / 9;
+};
 
 describe('a fahrenheit2celsius feature', () => {
   it('shows the automated test infrastructure works', () => {
