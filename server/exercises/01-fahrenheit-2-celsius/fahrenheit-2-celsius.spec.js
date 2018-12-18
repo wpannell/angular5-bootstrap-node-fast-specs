@@ -1,4 +1,4 @@
-let fahrenheit2Celsius;
+let fahrenheit2Celsius = () => {};
 
 describe('a fahrenheit2celsius feature', () => {
   it('shows the automated test infrastructure works', () => {
