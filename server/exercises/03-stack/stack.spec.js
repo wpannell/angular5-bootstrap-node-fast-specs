@@ -1,13 +1,16 @@
-describe('Stack canary test', () => {
-  it('shows the test framework works!', function () {
-    true.should.be.true('test framework not working');
-  });
-
-  it('isEmpty should be true');
-  it('push 1 isEmpty should be false');
-  it('push 1 then pop should give 1');
-  it('pop should give error Stack is Empty');
-  it('push 10, push 20 then pop, pop again should give 10');
-  it('push 1, push 2, push 3 then peek should give 3');
-  it('push 1, push 2 then pop then peek should give 1');
+describe('', ()=>{
+  it('starts empty');
+  it('starts with a length of zero');
+  it('when push is not empty');
+  it('when push length is one');
+  it('should pop the same that is pushed');
+  it('length should be zero after push and pop');
+  it('push two and pop returns the last element pushed');
+  it('push two, 2nd pop returns the first element pushed');
+  it('pop should throw an stack empty error when empty');
+  it('push should throw a stack at capacity error when at capacity');
+  it('peek should return the top element');
+  it('peek should not modify length');
+  it('peek should throw an stack empty error when empty');
 });
+
