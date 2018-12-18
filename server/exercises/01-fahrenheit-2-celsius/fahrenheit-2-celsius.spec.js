@@ -1,7 +1,7 @@
-let fahrenheit2Celsius = (temp) => {
-  if (temp === 212) {
+let fahrenheit2Celsius = (fahrenheitTemp) => {
+  if (fahrenheitTemp === 212) {
     return 100;
-  } else if (temp === 122) {
+  } else if (fahrenheitTemp === 122) {
     return 50;
   } else {
     return 0;
