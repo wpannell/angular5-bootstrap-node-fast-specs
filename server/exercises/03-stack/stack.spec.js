@@ -10,12 +10,12 @@ let stack = {
   },
 
   push(element) {
+    if (elements.length === 2) throw new Error('Stack length limit is 2');
     elements.unshift(element);
   },
 
   pop() {
     if (elements.length === 0) throw new Error('Stack is Empty');
-
     return elements.shift();
   }
 };
@@ -72,10 +72,15 @@ describe('stack implementation', () => {
   });
 
   it('pop should throw an stack empty error when empty', () => {
-    stack.pop.bind(null, []).should.throw();
+    stack.pop.bind(null, null).should.throw();
   });
 
-  it('push should throw a stack at capacity error when at capacity');
+  it('push should throw a stack at capacity error when at capacity', () => {
+    stack.push(9);
+    stack.push(10);
+    stack.push.bind(null, 11).should.throw();
+  });
+
   it('peek should return the top element');
   it('peek should not modify length');
   it('peek should throw an stack empty error when empty');
