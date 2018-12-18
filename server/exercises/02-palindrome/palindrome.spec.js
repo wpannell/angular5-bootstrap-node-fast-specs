@@ -17,5 +17,7 @@ describe('a palindrome function', () => {
     isPalindrome('madam').should.be.true();
   });
 
-  it('rise to vote sir is a palindrome');
+  it('rise to vote sir is not a palindrome', () => {
+    isPalindrome('rise to vote sir').should.be.false();
+  });
 });
