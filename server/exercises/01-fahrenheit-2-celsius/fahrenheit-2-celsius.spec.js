@@ -1,13 +1,4 @@
-let fahrenheit2Celsius = (fahrenheitTemp) => {
-  if (fahrenheitTemp === 212) {
-    return 100;
-  } else if (fahrenheitTemp === 122) {
-    return 50;
-  } else {
-    return 0;
-  }
-};
-
+let fahrenheit2Celsius = (temperature) => (temperature - 32) * 5 / 9;
 
 describe('fahrenheit2celsius feature', () => {
   it('shows the automated test infrastructure works', () => {

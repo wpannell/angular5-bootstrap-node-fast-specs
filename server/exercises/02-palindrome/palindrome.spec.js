@@ -1,4 +1,4 @@
-let palindrome = () => true;
+let isPalindrome = () => true;
 
 describe('a palindrome function', () => {
   it('has a canary test that proves the test infrastructure works', () => {
@@ -6,8 +6,7 @@ describe('a palindrome function', () => {
   });
 
   it('mom is a palindrome', () => {
-    palindrome('mom').should.is.true();
-
+    isPalindrome();
   });
 
   it('mom and dad is not palindrome');
