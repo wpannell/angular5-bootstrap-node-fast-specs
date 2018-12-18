@@ -11,6 +11,10 @@ let stack = {
 
   push(element) {
     elements.unshift(element);
+  },
+
+  pop() {
+    return elements.shift();
   }
 };
 
@@ -41,7 +45,11 @@ describe('stack implementation', () => {
     stack.length().should.equal(1);
   });
 
-  it('should pop the same that is pushed');
+  it('should pop the same that is pushed', () => {
+    stack.push(3);
+    stack.pop().should.equal(3);
+  });
+
   it('length should be zero after push and pop');
   it('push two and pop returns the last element pushed');
   it('push two, 2nd pop returns the first element pushed');
