@@ -21,7 +21,7 @@ let stack = {
 
   peek() {
     if (elements.length === 0) throw new Error('Peeking on an empty stack');
-    return 12;
+    return elements[0];
   }
 };
 
