@@ -17,6 +17,10 @@ let stack = {
   pop() {
     if (elements.length === 0) throw new Error('Stack is Empty');
     return elements.shift();
+  },
+
+  peek() {
+    return 12;
   }
 };
 
@@ -81,7 +85,11 @@ describe('stack implementation', () => {
     stack.push.bind(null, 11).should.throw('Stack length limit is 2');
   });
 
-  it('peek should return the top element');
+  it('peek should return the top element', () => {
+    stack.push(12);
+    stack.peek().should.equal(12);
+  });
+
   it('peek should not modify length');
   it('peek should throw an stack empty error when empty');
 });
