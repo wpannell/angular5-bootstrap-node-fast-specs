@@ -1,5 +1,5 @@
 let fahrenheitToCelsius = (fahrenheitTemp) => {
-  return (fahrenheitTemp === 212) ? 100 : 0;
+  return ((fahrenheitTemp - 32) * 5 / 9);
 };
 
 describe('the fahrenheit2celsius canary spec', () => {
