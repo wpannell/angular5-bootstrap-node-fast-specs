@@ -9,7 +9,7 @@ describe('the fahrenheit2celsius canary spec', () => {
   });
 
   it('32° fahrenheit = 0° celsius', () => {
-    fahrenheitToCelsius(32).should.equal(0);
+    fahrenheitToCelsius(32).should.equal(0, 'in correct conversion of 32 f');
   });
 
   it('122° fahrenheit = 50° celsius');
