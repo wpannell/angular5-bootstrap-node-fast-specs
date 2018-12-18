@@ -1,6 +1,4 @@
-function isPalindrome(word) {
-  return true;
-}
+const isPalindrome = word => true;
 
 describe('a palindrome function', () => {
   it('has a canary test that proves the test infrastructure works', () => {
