@@ -20,6 +20,7 @@ let stack = {
   },
 
   peek() {
+    if (elements.length === 0) throw new Error('Peeking on an empty stack');
     return 12;
   }
 };
@@ -96,5 +97,7 @@ describe('stack implementation', () => {
     stack.length().should.equal(1);
   });
 
-  it('peek should throw an stack empty error when empty');
+  it('peek should throw an stack empty error when empty', () => {
+    stack.peek.bind(null, null).should.throw('Peeking on an empty stack');
+  });
 });
