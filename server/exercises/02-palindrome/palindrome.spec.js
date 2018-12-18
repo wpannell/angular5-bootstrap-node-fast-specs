@@ -6,7 +6,7 @@ describe('a palindrome function', () => {
   });
 
   it('mom is a palindrome', () => {
-    isPalindrome();
+    isPalindrome('mom').should.be.equal(true);
   });
 
   it('mom and dad is not palindrome');
