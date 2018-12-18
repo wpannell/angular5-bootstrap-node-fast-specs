@@ -1,6 +1,4 @@
-function fahrenheitToCelsius(number) {
-  return 100;
-}
+let fahrenheitToCelsius = () => 100;
 
 describe('the fahrenheit2celsius canary spec', () => {
   it('shows the test infrastructure works', () => {
