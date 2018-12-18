@@ -1,6 +1,4 @@
-let fahrenheitToCelsius = (fahrenheitTemp) => {
-  return ((fahrenheitTemp - 32) * 5 / 9);
-};
+let fahrenheitToCelsius = temperature => (temperature - 32) * 5 / 9;
 
 describe('the fahrenheit2celsius canary spec', () => {
   it('shows the test infrastructure works', () => {
@@ -11,10 +9,10 @@ describe('the fahrenheit2celsius canary spec', () => {
   });
 
   it('32° fahrenheit = 0° celsius', () => {
-    fahrenheitToCelsius(32).should.equal(0, 'in correct conversion of 32 f');
+    fahrenheitToCelsius(32).should.equal(0, 'incorrect conversion of 32 f');
   });
 
   it('122° fahrenheit = 50° celsius', () => {
-    fahrenheitToCelsius(122).should.equal(50, 'in correct conversion of 122 f');
+    fahrenheitToCelsius(122).should.equal(50, 'incorrect conversion of 122 f');
   });
 });
