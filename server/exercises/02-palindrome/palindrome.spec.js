@@ -5,11 +5,7 @@ describe('a palindrome function', () => {
     true.should.be.true();
   });
 
-  it('mom is a palindrome', () => {
-    palindrome('mom').should.is.true();
-
-  });
-
+  it('mom is a palindrome');
   it('mom and dad is not palindrome');
   it('madam is a palindrome');
   it('rise to vote sir is a palindrome');
