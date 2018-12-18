@@ -1,9 +1,18 @@
+let stack = {
+  isEmpty() {
+    return true;
+  }
+};
+
 describe('stack implementation', () => {
   it('shows the automated test infrastructure works', () => {
     true.should.be.true();
   });
 
-  it('starts empty');
+  it('starts empty', () => {
+    stack.isEmpty().should.be.true();
+  });
+
   it('starts with a length of zero');
   it('when push is not empty');
   it('when push length is one');
