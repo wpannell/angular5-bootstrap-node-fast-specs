@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-describe.only('Prime factors', () => {
+describe('Prime factors', () => {
   it('1 = [1]');
   it('2 = [2]');
   it('3 = [3]');
