@@ -1,8 +1,12 @@
 /* eslint-disable no-param-reassign */
 describe.only('Prime factors', () => {
-  it('of 1 is 1');
-  it('of 2 is 2');
-  it('of 3 is 3');
-  it('of 4 is 2 and 2');
-  it('of 6 is 2 and 3');
+  it('1 = [1]');
+  it('2 = [2]');
+  it('3 = [3]');
+  it('4 = [2, 2]');
+  it('5 = [5]');
+  it('6 = [2, 3]');
+  it('7 = [7]');
+  it('8 = [2, 2, 2]');
+  it('9 = [3, 3]');
 });
