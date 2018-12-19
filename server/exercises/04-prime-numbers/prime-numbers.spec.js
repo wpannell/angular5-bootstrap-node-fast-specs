@@ -3,12 +3,12 @@
 let primeFactorsof = (number) => {
   const factors = [];
   if (number > 1) {
-    while (number % 2 === 0) {
+    if (number % 2 === 0) {
       factors.push(2);
       number /= 2;
-      if (number > 1) factors.push(number);
-    }
 
+    }
+    if (number > 1) factors.push(number);
   }
 
   return factors;
