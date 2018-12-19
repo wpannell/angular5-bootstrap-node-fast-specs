@@ -1,28 +1,35 @@
 class Stack {
+
   constructor() {
     this.items = [];
     this.capacity = 3;
   }
+
   isEmpty() {
     return this.items.length === 0;
   }
+
   size() {
     return this.items.length;
   }
+
   push(element) {
-    if (this.items.length > this.capacity) {
+    if (this.items.length >= this.capacity) {
       throw new Error('stack at capacity error when at capacity');
     } else {
-      this.items.push(element);
+      console.log(element);
+       this.items.push(element);
     }
   }
+
   pop() {
     if (this.items.length === 0) {
-      throw new Error('stack empty error when empty');
+      throw new Error('cannot pop an empty stack');
     } else {
       return this.items.pop();
     }
   }
+
   peek() {
     if (this.items.length === 0) {
       throw new Error('stack empty error when empty');
@@ -83,16 +90,24 @@ describe('implement stack', function () {
     stack.pop().should.be.equal('one');
   });
   it('pop should throw an stack empty error when empty', () => {
-    stack.pop.bind().should.throw();
+    (() => {
+      stack.pop();
+    }).should.throw('cannot pop an empty stack');
 
   });
   it('peek should throw an stack empty error when empty', () => {
-    stack.peek.bind().should.throw();
+    (() => {
+      stack.peek();
+    }).should.throw('stack empty error when empty');
 
   });
-  it('push should throw a stack at capacity error when at capacity', function () {
-    stack.push.bind().should.throw();
 
+  it('push should throw a stack at capacity error when at capacity', function () {
+    (() => {
+      stack.push('one');
+      stack.push('two');
+      stack.push('three');
+    }).should.throw('stack at capacity error when at capacity');
   });
 
 });
