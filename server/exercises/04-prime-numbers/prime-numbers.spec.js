@@ -1,10 +1,10 @@
 /* eslint-disable no-param-reassign */
 
-let primeFactorsof = () => [1];
+let primeFactorsOf = () => [1];
 
 describe('prime factors', () => {
   it('1 = [1]', () => {
-    primeFactorsof(1).should.deepEqual([1]);
+    primeFactorsOf(1).should.deepEqual([1]);
   });
 
   it('2 = [2]');
