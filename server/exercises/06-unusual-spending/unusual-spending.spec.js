@@ -1,26 +1,21 @@
-import td from 'testdouble';
+import * as td from 'testdouble';
 
 const {replace, when, verify} = td;
-const path = './server/exercises/06-unusual-spending/';
 
-describe('unusual spending', () => {
-  it('has a canary spec that shows test automation works', () => {
-    true.should.be.true('a customized message');
-  });
-
+describe.only('unusual spending', () => {
   it('unusual spending manages the collaboration of fetch, categorize and email', () => {
-    const fetch = replace(path + 'fetch').fetch;
-    const categorize = replace(path + 'categorize').categorize;
-    const email = replace(path + 'email').email;
-
-    let unusualSpending;
+    const fetch = replace(require('./fetch'), 'fetch');
+    const categorize = replace(require('./categorize'), 'categorize');
+    const email = replace(require('./email'), 'email');
 
     const userId = 'userId';
     const payments = 'payments';
     const categorizedPayments = 'categorizedPayments';
 
+    let unusualSpending;
+
     when(fetch(userId)).thenReturn(payments);
-    when(fetch(categorize)).thenReturn(categorizedPayments);
+    when(categorize(payments)).thenReturn(categorizedPayments);
 
     unusualSpending = require('./unusual-spending').unusualSpending;
 
