@@ -1,6 +1,11 @@
+const primeFactorsOf = () => [];
+
 /* eslint-disable no-param-reassign */
 describe('Prime factors', () => {
-  it('1 = [1]');
+  it('1 = [1]', () => {
+    primeFactorsOf(1).should.deepEqual([]);
+  });
+
   it('2 = [2]');
   it('3 = [3]');
   it('4 = [2, 2]');
