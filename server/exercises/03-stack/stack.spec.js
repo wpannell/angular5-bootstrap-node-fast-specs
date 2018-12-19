@@ -70,6 +70,6 @@ describe.only('', () => {
       stack.pop();
     }).should.throw('can not pop an empty stack');
   });
-  
+
   it('push should throw a stack at capacity error when at capacity');
 });
