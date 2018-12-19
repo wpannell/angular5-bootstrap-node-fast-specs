@@ -1,9 +1,16 @@
+/* eslint-disable no-param-reassign */
 let primeFactorsOf = number => {
-  if (number > 1) return [number];
-  return [];
+  const factors = [];
+  if (number > 1) {
+    if ((number % 2) === 0) {
+      factors.push(2);
+      number /= 2;
+    }
+    factors.push(number);
+  }
+  return factors;
 };
 
-/* eslint-disable no-param-reassign */
 describe('prime factors', () => {
   it('1=[1]', () => {
     primeFactorsOf(1).should.deepEqual([]);
@@ -16,7 +23,11 @@ describe('prime factors', () => {
   it('3=[3]', () => {
     primeFactorsOf(3).should.deepEqual([3]);
   });
-  it('4=[2,2]');
+
+  it('4=[2,2]', () => {
+    primeFactorsOf(4).should.deepEqual([2, 2]);
+  });
+
   it('5=[5]');
   it('6=[2,3]');
   it('7=[7]');
