@@ -1,0 +1,2 @@
+const fetch = () => {};
+export {fetch};
