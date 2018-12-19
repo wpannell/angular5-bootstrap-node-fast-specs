@@ -49,13 +49,16 @@ describe('implement stack', function () {
   it('starts empty', () => {
     stack.isEmpty().should.be.true();
   });
+
   it('starts with a length of zero', () => {
     stack.size().should.be.equal(0);
   });
+
   it('when push is not empty', () => {
     stack.push('one');
     stack.isEmpty().should.be.false();
   });
+
   it('when push length is one', () => {
     stack.push('one');
     stack.size().should.be.equal(1);
@@ -102,7 +105,7 @@ describe('implement stack', function () {
 
   });
 
-  it('push should throw a stack at capacity error when at capacity', function () {
+  xit('push should throw a stack at capacity error when at capacity', function () {
     (() => {
       stack.push('one');
       stack.push('two');
