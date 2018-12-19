@@ -1,5 +1,5 @@
 let primeFactorsOf = number => {
-  if (number === 2) return [2];
+  if (number > 1) return [number];
   return [];
 };
 
@@ -13,7 +13,9 @@ describe('prime factors', () => {
     primeFactorsOf(2).should.deepEqual([2]);
   });
 
-  it('3=[3]');
+  it('3=[3]', () => {
+    primeFactorsOf(3).should.deepEqual([3]);
+  });
   it('4=[2,2]');
   it('5=[5]');
   it('6=[2,3]');
