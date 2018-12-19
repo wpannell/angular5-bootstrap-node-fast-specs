@@ -1,13 +1,16 @@
 /* eslint-disable no-param-reassign */
 
-let primeFactorsOf = () => [1];
+let primeFactorsOf = number => (number === 1) ? [1] : [2];
 
 describe('prime factors', () => {
   it('1 = [1]', () => {
     primeFactorsOf(1).should.deepEqual([1]);
   });
 
-  it('2 = [2]');
+  it('2 = [2]', () => {
+    primeFactorsOf(2).should.deepEqual([2]);
+  });
+
   it('3 = [3]');
   it('4 = [2, 2]');
   it('5 = [5]');
