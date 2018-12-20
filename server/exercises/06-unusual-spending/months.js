@@ -1,4 +1,4 @@
-const months = {
+export const months = {
   current: (date = new Date()) => {
     return {
       month: date.getMonth() + 1,
@@ -12,5 +12,3 @@ const months = {
     };
   }
 };
-
-export {months};

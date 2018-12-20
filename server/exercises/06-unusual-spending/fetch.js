@@ -1,7 +1,7 @@
 import {months} from './months';
 import {api} from './api';
 
-const fetch = userId => {
+export const fetch = userId => {
   const priorMonth = months.prior();
   const currentMonth = months.current();
 
@@ -20,5 +20,3 @@ const fetch = userId => {
 
   return [currentMonthPayments, priorMonthPayments];
 };
-
-export {fetch};

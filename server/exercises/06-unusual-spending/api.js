@@ -1,3 +1,1 @@
-const api = () => {};
-
-export {api};
+export const api = () => {};
