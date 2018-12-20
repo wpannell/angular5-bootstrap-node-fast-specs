@@ -2,7 +2,7 @@ import td from 'testdouble';
 
 const {replace, when, verify} = td;
 
-describe.only('fetch ', () => {
+describe('fetch ', () => {
   it('fetch manages the collaboration of months and api', () => {
 
     // === arrange ===

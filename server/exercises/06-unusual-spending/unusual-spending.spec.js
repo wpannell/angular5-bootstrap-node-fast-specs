@@ -2,7 +2,7 @@ import td from 'testdouble';
 
 const {replace, when, verify} = td;
 
-describe.only('unusual spending', () => {
+describe('unusual spending', () => {
   it('unusal spending manages the collaboration of fetch, ' +
     'categorize and email', () => {
 
