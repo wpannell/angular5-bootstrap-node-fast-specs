@@ -1,16 +1,14 @@
-const today = new Date();
-
 const months = {
-  prior: () => {
+  current: (date = new Date()) => {
     return {
-      month: today.getMonth(),
-      year: today.getFullYear()
+      month: date.getMonth() + 1,
+      year: date.getFullYear()
     };
   },
-  current: () => {
+  prior: (date = new Date()) => {
     return {
-      month: today.getMonth() + 1,
-      year: today.getFullYear()
+      month: date.getMonth(),
+      year: date.getFullYear()
     };
   }
 };
