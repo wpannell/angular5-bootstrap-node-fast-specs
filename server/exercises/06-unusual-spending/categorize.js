@@ -1,9 +1,15 @@
 const calculateCategorizedPayments = payments => {
   let categorizedPayments = [];
 
+  payments.sort((payment1, payment2) => {
+    return payment1.category > payment2.category;
+  });
+
   payments.forEach(payment => {
-    if (categorizedPayments.length > 0 && payment.category === categorizedPayments[categorizedPayments.length - 1].category) {
-      categorizedPayments[categorizedPayments.length - 1].amount += payment.amount;
+    const lastPaymentIndex = categorizedPayments.length - 1;
+
+    if (categorizedPayments.length > 0 && payment.category === categorizedPayments[lastPaymentIndex].category) {
+      categorizedPayments[lastPaymentIndex].amount += payment.amount;
     } else {
       categorizedPayments.push(payment);
     }

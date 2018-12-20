@@ -22,6 +22,9 @@ describe('categorize', () => {
         amount: 100,
         category: 'cable'
       }, {
+        amount: 25,
+        category: 'coffee'
+      }, {
         amount: 30,
         category: 'cable'
       }]}
@@ -46,6 +49,9 @@ describe('categorize', () => {
         payments: [{
           amount: 130,
           category: 'cable'
+        }, {
+          amount: 25,
+          category: 'coffee'
         }]
       }
     ];
