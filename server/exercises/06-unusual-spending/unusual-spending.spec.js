@@ -8,16 +8,14 @@ describe.only('unusual spending', () => {
     const categorize = replace(require('./categorize'), 'categorize');
     const email = replace(require('./email'), 'email');
 
+    const unusualSpending = require('./unusual-spending').unusualSpending;
+
     const userId = 'userId';
     const payments = 'payments';
     const categorizedPayments = 'categorizedPayments';
 
-    let unusualSpending;
-
     when(fetch(userId)).thenReturn(payments);
     when(categorize(payments)).thenReturn(categorizedPayments);
-
-    unusualSpending = require('./unusual-spending').unusualSpending;
 
     unusualSpending(userId);
 

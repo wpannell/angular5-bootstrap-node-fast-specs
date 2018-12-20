@@ -1,1 +1,3 @@
-export const fetch = () => {};
+const fetch = () => {};
+
+export {fetch};
