@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 let primeFactorsof = (number) => {
   const factors = [];
+  //for (var i = 2; i <= number; i++) {
   if (number > 1) {
     while (number % 2 === 0) {
       factors.push(2);
@@ -10,7 +11,7 @@ let primeFactorsof = (number) => {
   }
   return factors;
 };
-describe('prime factors', function () {
+describe.only('prime factors', function () {
   it('1=[1]', () => {
     primeFactorsof(1).should.deepEqual([]);
   });
