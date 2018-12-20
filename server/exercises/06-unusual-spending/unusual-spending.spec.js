@@ -2,7 +2,7 @@ import * as td from 'testdouble';
 
 const {replace, when, verify} = td;
 
-describe.only('unusual spending', () => {
+describe('unusual spending', () => {
   it('unusual spending manages the collaboration of fetch, categorize and email', () => {
     const fetch = replace(require('./fetch'), 'fetch');
     const categorize = replace(require('./categorize'), 'categorize');
