@@ -2,11 +2,15 @@
 let primeFactorsOf = number => {
   const factors = [];
   if (number > 1) {
-    while ((number % 2) === 0) {
-      factors.push(2);
-      number /= 2;
+    const divisors = [2, 3];
+    divisors.forEach((divisor) => {
+    while ((number % divisor) === 0) {
+      factors.push(divisor);
+      number /= divisor;
     }
+    });
   }
+
   if (number > 1) {
     factors.push(number);
   }
