@@ -5,8 +5,18 @@ const fetch = userId => {
   const priorMonth = months.prior();
   const currentMonth = months.current();
 
-  const priorMonthPayments = api(userId, priorMonth);
-  const currentMonthPayments = api(userId, currentMonth);
+  const priorPayments = api(userId, priorMonth);
+  const currentPayments = api(userId, currentMonth);
+
+  const priorMonthPayments = {
+    month: priorMonth,
+    payments: priorPayments
+  };
+
+  const currentMonthPayments = {
+    month: currentMonth,
+    payments: currentPayments
+  };
 
   return [currentMonthPayments, priorMonthPayments];
 };

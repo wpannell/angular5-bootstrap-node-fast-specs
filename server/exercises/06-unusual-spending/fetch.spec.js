@@ -25,20 +25,31 @@ describe('fetch', () => {
     when(months.current()).thenReturn(currentMonth);
 
     const userId = 'userId';
-    const priorMonthPayments = [{
+
+    const priorPayments = [{
       amount: 100,
       category: 'cable'
     }, {
       amount: 200,
       category: 'Gasoline'
     }];
-    const currentMonthPayments = [{
+
+    const priorMonthPayments = {
+      month: priorMonth,
+      payments: priorPayments};
+
+    const currentPayments = [{
       amount: 150,
       category: 'mobile phone'
     }];
 
-    when(api(userId, priorMonth)).thenReturn(priorMonthPayments);
-    when(api(userId, currentMonth)).thenReturn(currentMonthPayments);
+    const currentMonthPayments = {
+      month: currentMonth,
+      payments: currentPayments
+    };
+
+    when(api(userId, priorMonth)).thenReturn(priorPayments);
+    when(api(userId, currentMonth)).thenReturn(currentPayments);
 
     fetch(userId).should.deepEqual([currentMonthPayments, priorMonthPayments]);
   });
