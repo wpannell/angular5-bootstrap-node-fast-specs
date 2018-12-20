@@ -11,5 +11,12 @@ describe('months', () => {
       year: 2018
     });
   });
+
+  it('gives the prior month', () => {
+    months.prior().should.deepEqual({
+      month: 11,
+      year: 2018
+    });
+  });
 });
 

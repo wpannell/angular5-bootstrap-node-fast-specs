@@ -1,7 +1,12 @@
 const today = new Date();
 
 const months = {
-  prior: () => {},
+  prior: () => {
+    return {
+      month: today.getMonth(),
+      year: today.getFullYear()
+    };
+  },
   current: () => {
     return {
       month: today.getMonth() + 1,
