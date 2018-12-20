@@ -1,3 +1,3 @@
-const categorize = () => {};
+const categorize = () => null;
 
 export {categorize};
