@@ -44,7 +44,7 @@ describe.only('prime factors', function () {
     primeFactorsof(8).should.deepEqual([2, 2, 2]);
   });
 
-  it('9=[3,3]', () => {
+  xit('9=[3,3]', () => {
     primeFactorsof(9).should.deepEqual([3, 3]);
 
   });
