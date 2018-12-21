@@ -17,13 +17,11 @@ describe('unusual spending async', () => {
   const email = replace(require('./email'), 'email');
 
   it('sucessfully manages the collaboration of fetch, categorize, email', () => {
-    when(fetch(userId)).thenReturn(new Promise((resolve, reject) => {
+    when(fetch(userId)).thenReturn(new Promise((resolve) => {
       return resolve(payments);
     }));
-
     when(categorize(payments)).thenReturn(categorizedPayments);
     const unusualSpending = require('./unusual-spending').unusualSpending;
-
     return unusualSpending(userId).then(() => {
       verify(email(userId, categorizedPayments));
     });
@@ -31,16 +29,13 @@ describe('unusual spending async', () => {
   });
 
   it('on fail', () => {
-
-    when(fetch(userId)).thenReturn(new Promise((reject) => {
-      return reject('error');
+    when(fetch(userId)).thenReturn(new Promise((resolve, reject) => {
+      return reject(new Error('Error'));
     }));
     const unusualSpending = require('./unusual-spending').unusualSpending;
-
     return unusualSpending(userId).catch((rejected) => {
-      rejected.message.should.equal('problem with fetc');
+      rejected.message.should.equal('problem with fetch Error');
     });
-
   });
 });
 

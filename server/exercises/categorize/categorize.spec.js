@@ -13,11 +13,11 @@ describe.only('months', () => {
     const priorMonthPayment = [{amount: 20, categorize: 'tennis'},
       {amount: 30, categorize: 'tennis'}];
 
-    const categorizedCurrentMonth = [{amount: 30, categorize: 'tennis'}];
-    const categorizedPriorMonth = [{amount: 50, categorize: 'tennis'}];
+    //const categorizedCurrentMonth = [{amount: 30, categorize: 'tennis'}];
+    //const categorizedPriorMonth = [{amount: 50, categorize: 'tennis'}];
 
-    var payments = [currentMonthPayment, priorMonthPayment];
-    var categorizedPayments = [categorizedCurrentMonth, categorizedPriorMonth];
+//    var payments = [currentMonthPayment, priorMonthPayment];
+   // var categorizedPayments = [categorizedCurrentMonth, categorizedPriorMonth];
 
    // categorize(payments).should.deepEqual(categorizedPayments);
   });

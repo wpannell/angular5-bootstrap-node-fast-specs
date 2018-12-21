@@ -9,7 +9,7 @@ export const unusualSpending = (id) => {
     email(id, categorizedPayments);
 
   }).catch((error) => {
-    throw new Error('problem with fetch');
+    throw new Error('problem with fetch ' + error.message);
   });
 
 };
