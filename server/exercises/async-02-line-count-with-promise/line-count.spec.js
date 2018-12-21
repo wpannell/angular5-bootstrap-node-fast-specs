@@ -16,11 +16,11 @@ describe('line count can be checked', () => {
     });
   });
 
-  it('by using eventually or fulfilledWith', () => {
+  it('by using eventually', () => {
     return lineCount(file).should.eventually.equal(14);
   });
 
-  it('by using eventually or fulfilledWith', () => {
+  it('by using fulfilledWith', () => {
     return lineCount(file).should.be.fulfilledWith(14);
   });
 });
