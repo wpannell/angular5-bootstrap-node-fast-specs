@@ -51,6 +51,7 @@ describe('', () => {
   it('length should be zero after push and pop', () => {
     let stack = new Stack();
     stack.push(1);
+    stack.pop();
     stack.length().should.equal(0);
   });
   it('push two and pop returns the last element pushed', () => {
