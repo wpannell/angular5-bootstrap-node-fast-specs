@@ -1,6 +1,6 @@
 import td from 'testdouble';
 
-const {replace, when, verify} = td;
+const {replace, when} = td;
 
 describe('fetch ', () => {
   it('fetch manages the collaboration of months and api', () => {

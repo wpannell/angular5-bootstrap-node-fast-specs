@@ -1,4 +1,3 @@
-const api = (month) => {
-};
+const api = () => {};
 
 export {api};

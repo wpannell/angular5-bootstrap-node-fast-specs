@@ -36,7 +36,7 @@ describe('categorize', () => {
 
     const categorizedPayments = [categorizedPriorMonthPayments, categorizedCurrentMonthPayments];
 
-    // categorize(payments).should.deepEqual(categorizedPayments);
+    categorize(payments).should.deepEqual(categorizedPayments);
   });
 });
 
