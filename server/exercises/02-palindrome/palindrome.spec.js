@@ -17,7 +17,7 @@ describe('a isPalindrome function', () => {
     isPalindrome('madam').should.be.true();
   });
 
-  it('rise to vote sir is a isPalindrome', () => {
-    isPalindrome('rise to vote sir is a isPalindrome').should.be.true();
+  it('rise to vote sir is not a isPalindrome', () => {
+    isPalindrome('rise to vote sir').should.be.false();
   });
 });
