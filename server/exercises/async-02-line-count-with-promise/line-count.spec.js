@@ -1,8 +1,9 @@
 import {lineCount} from './line-count';
+
 const file = 'server/exercises/async-02-line-count-with-promise/line-count.js';
+const errorFile = 'no-such-file.js';
 
 describe('line count can be checked', () => {
-
   it('with the done parameter like with a callback', (done) => {
     lineCount(file).then((fileLineCount) => {
       fileLineCount.should.equal(14);
@@ -23,4 +24,12 @@ describe('line count can be checked', () => {
   it('by using fulfilledWith', () => {
     return lineCount(file).should.be.fulfilledWith(14);
   });
+
+  it('with the done parameter like with a callback when there is error', done => {
+    lineCount(errorFile).catch(error => {
+      error.should.deepEqual(new Error('problem reading file: ' + errorFile));
+      done();
+    });
+  });
+
 });
