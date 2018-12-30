@@ -31,5 +31,4 @@ describe('line count can be checked', () => {
       done();
     });
   });
-
 });
