@@ -31,4 +31,10 @@ describe('line count can be checked', () => {
       done();
     });
   });
+
+  it('by returning the promise after .catch', () => {
+    return lineCount(errorFile).catch(error => {
+      error.should.deepEqual(new Error('problem reading file: ' + errorFile));
+    });
+  });
 });
